@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D to 3D Depth Generator</title>
+</head>
+<body>
+
+<h2>Upload Image</h2>
+
+<form action="/upload/" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">Generate 3D</button>
+</form>
+
+{% if depth_url %}
+    <h3>View 3D Version</h3>
+    <a href="/static/viewer.html?image={{ image_url }}&depth={{ depth_url }}" target="_blank">
+        Open 3D / AR Viewer
+    </a>
+{% endif %}
+
+</body>
+</html>
